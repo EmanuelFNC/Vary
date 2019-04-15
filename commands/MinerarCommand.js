@@ -67,9 +67,9 @@ const embed = new Discord.RichEmbed()
   db.Users.findOne({userID: message.author.id}, (err, user) =>{
       if (user) {
           if ((86400000 / 2) - (Date.now() - user.coinsLastTime) > 0) return message.channel.send('Você já pegou seus coins diários hoje, espere para pegar novamente')
-          user.prata += raplays1
-          user.ferro += raplays2
-          user.ouro += raplays3
+          user.prata += prata
+          user.ferro += ferro
+          user.ouro += ouro
           user.minerarLastTime = Date.now()
           message.reply(embed)
           user.save();
