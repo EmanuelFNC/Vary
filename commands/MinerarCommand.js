@@ -4,7 +4,7 @@ const db = require("../database.js")
 
 exports.run = (vary, message, args) => {
   let prata = (replys1[Math.floor(Math.random() * replys1.length)])
-  var raplays1 = [
+  var raplys1 = [
     "0",
     "14",
     "13",
@@ -23,7 +23,7 @@ exports.run = (vary, message, args) => {
     "0"
 ];
 let ferro = (replys2[Math.floor(Math.random() * replys2.length)])
-var replays2 = [
+var repl ys2 = [
     "0",
     "14",
     "13",
@@ -66,7 +66,7 @@ const embed = new Discord.RichEmbed()
 
   db.Users.findOne({userID: message.author.id}, (err, user) =>{
       if (user) {
-          if ((86400000 / 2) - (Date.now() - user.coinsLastTime) > 0) return message.channel.send('Você já pegou seus coins diários hoje, espere para pegar novamente')
+          if ((86400000 / 2) - (Date.now() - user.minerarLastTime) > 0) return message.channel.send('Você já minerou hoje, espere para pegar minerar novamente!')
           user.prata += prata
           user.ferro += ferro
           user.ouro += ouro
